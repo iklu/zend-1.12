@@ -5,8 +5,10 @@ defined('APPLICATION_PATH')
 	|| define('APPLICATION_PATH', __DIR__ . '/application');
 
 // Define application environment
-defined('APPLICATION_ENV')
-	|| define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
+//defined('APPLICATION_ENV')
+//	|| define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'production'));
+
+define('APPLICATION_ENV', 'development');
 
 // set include path
 set_include_path(realpath(APPLICATION_PATH . '/../library')

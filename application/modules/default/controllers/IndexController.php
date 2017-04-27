@@ -1,11 +1,9 @@
 <?php
 
-class IndexController extends Saffron_AbstractController
-{
+class IndexController extends Saffron_AbstractController {
 
-	public function indexAction()
-	{
-		$this->view->headTitle('Hello World');
-	}
+    public function indexAction() {
+        $this->view->headTitle('Homepage');
+    }
 
 }
