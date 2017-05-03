@@ -9,7 +9,7 @@ class Application_Form_Guestbook extends Zend_Form
         $this->setMethod('post');
 
         // Add an email element
-        $this->addElement('text', 'email', array(
+        $this->addElement('text', 'EMAIL', array(
             'label'      => 'Your email address:',
             'required'   => true,
             'filters'    => array('StringTrim'),
@@ -19,7 +19,7 @@ class Application_Form_Guestbook extends Zend_Form
         ));
 
         // Add the comment element
-        $this->addElement('textarea', 'comment', array(
+        $this->addElement('textarea', 'COMMENTS', array(
             'label'      => 'Please Comment:',
             'required'   => true,
             'validators' => array(

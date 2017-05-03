@@ -2,7 +2,7 @@
 
 class Application_Model_Guestbook
 {
-    protected $_comment;
+    protected $_comments;
     protected $_created;
     protected $_email;
     protected $_id;
@@ -44,15 +44,15 @@ class Application_Model_Guestbook
         return $this;
     }
 
-    public function setComment($text)
+    public function setComments($text)
     {
-        $this->_comment = (string) $text;
+        $this->_comments = (string) $text;
         return $this;
     }
 
-    public function getComment()
+    public function getComments()
     {
-        return $this->_comment;
+        return $this->_comments;
     }
 
     public function setEmail($email)
