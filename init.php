@@ -10,9 +10,14 @@ defined('APPLICATION_PATH')
 
 define('APPLICATION_ENV', 'development');
 
-// set include path
-set_include_path(realpath(APPLICATION_PATH . '/../library')
-	. PATH_SEPARATOR . get_include_path());
+// set include path 
+set_include_path(implode(PATH_SEPARATOR, array(
+    realpath(APPLICATION_PATH . '/../library'),
+    realpath(APPLICATION_PATH . '/../vendor/zendframework/zendframework1/library')
+)));
+
+//require autoload from vendor
+require_once realpath(APPLICATION_PATH . '/../vendor/autoload.php');
 
 require_once 'Zend/Config/Ini.php';
 require_once 'Zend/Application.php';

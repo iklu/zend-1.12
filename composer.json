@@ -1,0 +1,6 @@
+{
+    "require": {
+        "php-di/zf1-bridge": "^3.1",
+        "doctrine/common": "^2.7"
+    }
+}
