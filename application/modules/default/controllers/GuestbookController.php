@@ -9,11 +9,21 @@ class GuestbookController extends Zend_Controller_Action
      */
     private $guestbookService;
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function indexAction()
     {
         $this->view->entries = $this->guestbookService->getAllEntries();
     }
 
+    /**
+     * Undocumented function
+     *
+     * @return void
+     */
     public function signAction()
     {
         $request = $this->getRequest();

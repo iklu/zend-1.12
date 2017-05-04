@@ -30,9 +30,9 @@ class Application_Model_GuestbookMapper
         $data = array(
             'EMAIL'   => $guestbook->getEmail(),
             'COMMENTS' => $guestbook->getComments(),
-            'CREATED' => date('Y-m-d H:i:s'),
+            'CREATED' =>new Zend_Db_Expr("to_date('".date("Y-m-d")."', 'YYYY-MM-DD')") ,
         );
-        
+
          $this->getDbTable()->insert($data);
         
         if (null === ($id = $guestbook->getId())) {
@@ -62,10 +62,10 @@ class Application_Model_GuestbookMapper
         $entries   = array();
         foreach ($resultSet as $row) {
             $entry = new Application_Model_Guestbook();
-            $entry->setId($row->id)
-                  ->setEmail($row->email)
-                  ->setComments($row->comments)
-                  ->setCreated($row->created);
+            $entry->setId($row->ID)
+                  ->setEmail($row->EMAIL)
+                  ->setComments($row->COMMENTS)
+                  ->setCreated($row->CREATED);
             $entries[] = $entry;
         }
         return $entries;

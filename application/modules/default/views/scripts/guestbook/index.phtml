@@ -9,7 +9,7 @@
 Guestbook Entries: <br />
 <dl>
     <?php foreach ($this->entries as $entry): ?>
-    <dt><?php echo $this->escape($entry->email) ?></dt>
-    <dd><?php echo $this->escape($entry->comment) ?></dd>
+    <dt><?php echo $this->escape($entry->EMAIL) ?></dt>
+    <dd><?php echo $this->escape($entry->COMMENTS) ?></dd>
     <?php endforeach ?>
 </dl>

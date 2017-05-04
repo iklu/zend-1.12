@@ -36,7 +36,7 @@ class Application_Model_Guestbook
     {
         $methods = get_class_methods($this);
         foreach ($options as $key => $value) {
-            $method = 'set' . ucfirst($key);
+            $method = 'set' . ucfirst(strtolower($key));
             if (in_array($method, $methods)) {
                 $this->$method($value);
             }
