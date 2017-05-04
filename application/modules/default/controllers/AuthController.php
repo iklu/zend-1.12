@@ -5,20 +5,19 @@
      
         public function loginAction()
         {
-            $db = $this->_getParam('resources.db.adapter');
-
-            print_r($db);
+            $dbAdapter = Zend_Db_Table::getDefaultAdapter();           
      
             $loginForm = new Application_Form_Auth_Login();
+            
      
             if ($loginForm->isValid($_POST)) {
      
                 $adapter = new Zend_Auth_Adapter_DbTable(
-                    $db,
+                    $dbAdapter,
                     'USERS_AUTH',
                     'USERNAME',
                     'PASSWORD',
-                    'MD5(CONCAT(?, PASSWORD_SALT))'
+                    'PASSWORD_SALT'
                     );
      
                 $adapter->setIdentity($loginForm->getValue('USERNAME'));
@@ -31,6 +30,8 @@
                     $this->_helper->FlashMessenger('Successful Login');
                     $this->_redirect('/');
                     return;
+                } else {
+                    var_dump($result);
                 }
      
             }
